@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://unpkg.com/vue@3'></script>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <title>Vue Slider</title>
+</head>
+<body>
+  
+  <div id="app">
+  
+    <div class="main-wrapper">
+    
+      
+      <div class="container">
+        <div class="buttons">
+          <div class="next" @click="nextPrev(true)"></div>
+          <div class="prev" @click="nextPrev(false)"></div>
+        </div>
+        <div  class="slider">
+          <img 
+          :src="images[activeImage]" 
+          alt="">
+        </div>
+        <div v-for="(image, index) in images" class="thumbs">
+          <img 
+          :src="image"
+          class="thumbs"
+          alt="">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
