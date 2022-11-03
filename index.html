@@ -13,24 +13,24 @@
   
   <div id="app">
   
-    <div class="main-wrapper">
+  <div class="main-wrapper">
     
       
       <div class="container">
         <div class="buttons">
-          <div class="next" @click="nextPrev(true)"></div>
-          <div class="prev" @click="nextPrev(false)"></div>
+          <div class="next" @click="nextPrev(false)"></div>
+          <div class="prev" @click="nextPrev(true)"></div>
         </div>
         <div  class="slider">
-          <img 
-          :src="images[activeImage]" 
-          alt="">
+          <img :src="images[activeImage]">
         </div>
-        <div v-for="(image, index) in images" class="thumbs">
-          <img 
+        <div class="thumbs">
+        <img 
+          v-for="(image, index) in images" 
+          class="thumb"
+          :class="{'thumb-active' : index === activeImage}"
           :src="image"
-          class="thumbs"
-          alt="">
+          @click="activeImage = index">
         </div>
 
       </div>

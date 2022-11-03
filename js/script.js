@@ -20,6 +20,9 @@ createApp({
       },
       nextPrev(isNext){
         isNext ? this.activeImage++ : this.activeImage--;
+
+        if(this.activeImage === this.images.length) this.activeImage = 0;
+        else if(this.activeImage < 0) this.activeImage = this.images.length - 1;
       }
   }
-})
+}).mount('#app');
